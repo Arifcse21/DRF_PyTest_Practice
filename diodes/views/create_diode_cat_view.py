@@ -3,10 +3,17 @@ from rest_framework.response import Response
 from rest_framework import status
 from diodes.models import DiodeCategory
 from diodes.serializers import CreateDiodeCategorySerializer
+from drf_yasg.utils import swagger_auto_schema
 
 
 class CreateDiodeCategoryViewset(ViewSet):
+    serializer_class = CreateDiodeCategorySerializer
 
+    @swagger_auto_schema(
+        request_body=CreateDiodeCategorySerializer,
+        operation_summary="create diode category",
+        operation_description="This api creates a new diode category record"
+    )
     def create(self, request):
         print("category data = ", request.data)
 
@@ -17,7 +24,7 @@ class CreateDiodeCategoryViewset(ViewSet):
 
         try:
 
-            serializer = CreateDiodeCategorySerializer(data=diode_cat_record, context={"request": request})
+            serializer = self.serializer_class(data=diode_cat_record, context={"request": request})
             serializer.is_valid(raise_exception=True)
             serializer.save()
 
