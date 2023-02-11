@@ -1,0 +1,2 @@
+from .create_diode_cat_view import CreateDiodeCategoryViewset
+

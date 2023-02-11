@@ -1,0 +1,1 @@
+from .test_create_diode_cat_model import test_diode_model

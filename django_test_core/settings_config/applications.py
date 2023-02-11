@@ -10,8 +10,9 @@ PREINSTALLED_APPS = [
 ]
 
 PROJECT_APPS = [
-    'dj_test'
-    'drf_yasg',
+    # 'drf_yasg',
+    'diodes',
+
 ]
 
 INSTALLED_APPS = PREINSTALLED_APPS + PROJECT_APPS
