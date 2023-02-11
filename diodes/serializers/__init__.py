@@ -1,1 +1,1 @@
-from .create_diode_cat_serializer import CreateDiodeCategorySerializer
+from .diode_cat_serializer import DiodeCategorySerializer
