@@ -2,7 +2,7 @@ from rest_framework.serializers import ModelSerializer
 from diodes.models import DiodeCategory
 
 
-class CreateDiodeCategory(ModelSerializer):
+class CreateDiodeCategorySerializer(ModelSerializer):
 
     class Meta:
         model = DiodeCategory
