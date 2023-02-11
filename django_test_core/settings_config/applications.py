@@ -10,7 +10,7 @@ PREINSTALLED_APPS = [
 ]
 
 PROJECT_APPS = [
-    # 'drf_yasg',
+    'drf_yasg',
     'diodes',
 
 ]
