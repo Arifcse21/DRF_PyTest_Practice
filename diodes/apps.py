@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class DjTestConfig(AppConfig):
+class DiodesConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'dj_test'
+    name = 'diodes'
