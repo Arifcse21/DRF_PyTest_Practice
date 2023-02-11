@@ -2,15 +2,15 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import status
 from diodes.models import DiodeCategory
-from diodes.serializers import CreateDiodeCategorySerializer
+from diodes.serializers import DiodeCategorySerializer
 from drf_yasg.utils import swagger_auto_schema
 
 
 class CreateDiodeCategoryViewset(ViewSet):
-    serializer_class = CreateDiodeCategorySerializer
+    serializer_class = DiodeCategorySerializer
 
     @swagger_auto_schema(
-        request_body=CreateDiodeCategorySerializer,
+        request_body=DiodeCategorySerializer,
         operation_summary="create diode category",
         operation_description="This api creates a new diode category record"
     )

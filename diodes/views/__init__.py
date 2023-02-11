@@ -1,2 +1,2 @@
-from .create_diode_cat_view import CreateDiodeCategoryViewset
-
+from .diode_cat_create_view import CreateDiodeCategoryViewset
+from .diode_cat_get_view import GetDiodeCategoryViewset
