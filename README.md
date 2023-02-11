@@ -1,4 +1,4 @@
-# DRF_PyTest_Practice
+# DRF_PyTest_Swagger
 Django REST framework with PyTest unit testing
 
 
