@@ -1,5 +1,5 @@
 # DRF_PyTest_Swagger
-Django REST framework with PyTest unit testing
+Django REST framework with PyTest, Swagger and redoc
 
 
 ### API Documentation url
