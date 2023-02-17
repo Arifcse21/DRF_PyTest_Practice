@@ -1,3 +1,5 @@
+import json
+from pathlib import Path
 import pytest
 from django.contrib.auth import get_user_model
 from rest_framework.test import APIClient
@@ -10,7 +12,7 @@ def django_db_setup(django_db_setup, django_db_blocker):
 
 
 @pytest.fixture
-def client():
+def api_client():
     return APIClient
 
 
