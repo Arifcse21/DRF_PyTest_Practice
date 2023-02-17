@@ -1,13 +1,18 @@
+import json
 import pytest
 import requests
 from django.urls import reverse
+from pathlib import Path
 
 
-class TestUserViewSet:
-    path = "get_diode_cat-list"
+pytestmark = pytest.mark.django_db
 
-    def test_get_diode_cat_empty_list(self, client):
-        resp = client.get(self.path)
+
+class TestDiodeCategory:
+
+    def test_get_diode_cat_empty_list(self, api_client):
+        ep = "/api/v1/diodes/get-diode-cat/"
+        resp = api_client().get(ep)
 
         response_data = resp.json()
         successful = response_data["successful"]
