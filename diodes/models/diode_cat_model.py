@@ -1,9 +1,17 @@
 from django.db import models
 
 
+def maintain_serial():
+    last_entry = DiodeCategory.objects.all().order_by('id').last()
+    if last_entry:
+        return last_entry.id + 1
+    return 1
+
+
 class DiodeCategory(models.Model):
-    category = models.CharField(max_length=50, null=True, blank=True)
-    description = models.TextField(max_length=2000, null=True, blank=True)
+    id = models.AutoField(unique=True, primary_key=True, editable=False, default=maintain_serial)
+    category = models.CharField(max_length=50)
+    description = models.TextField(max_length=2000)
 
     created_at = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)

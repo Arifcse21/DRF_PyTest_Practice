@@ -8,10 +8,10 @@ from pathlib import Path
 pytestmark = pytest.mark.django_db
 
 
-class TestDiodeCategory:
+class TestDiodeGetCategory:
 
     def test_get_diode_cat_empty_list(self, api_client):
-        ep = "/api/v1/diodes/get-diode-cat/"
+        ep = reverse("get-diode-cat-list")
         resp = api_client().get(ep)
 
         response_data = resp.json()

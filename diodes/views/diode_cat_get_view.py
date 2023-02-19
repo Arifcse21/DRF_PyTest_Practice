@@ -6,7 +6,7 @@ from diodes.models import DiodeCategory
 from drf_yasg.utils import  swagger_auto_schema
 
 
-class GetDiodeCategoryViewset(ViewSet):
+class GetDiodeCategoryViewSet(ViewSet):
 
     @swagger_auto_schema(
         operation_summary="Get all diode categories",
