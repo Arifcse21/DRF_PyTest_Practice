@@ -1,5 +1,6 @@
 {
   "base_url": "api/v1/diodes/",
   "create_diode_cat": "create-diode-cat",
-  "get_diode_cat": "get-diode-cat"
+  "get_diode_cat": "get-diode-cat",
+  "ret_del_diode_cat": "ret-del-diode-cat"
 }
