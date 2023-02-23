@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  drf:
+    image: drf_pytest_swagger:latest
+    container_name: drf_pytest_swagger
+    build:
+      context: .
+      network: host
+    env_file:
+      - .env
+    ports:
+      - "7983:7983"
