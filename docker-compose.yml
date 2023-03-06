@@ -1,16 +1,6 @@
 version: "3.9"
 
 services:
-  db:
-    image: postgres:latest
-    container_name: database
-    ports:
-      - "5432:5432"
-    environment:
-      - "POSTGRES_DB=postgres"
-      - "POSTGRES_USER=postgres"
-      - "POSTGRES_PASSWORD=postgres"
-
   drf:
     image: drf_pytest_swagger:latest
     container_name: drf_pytest_swagger
@@ -22,13 +12,19 @@ services:
     env_file:
       - .env
     ports:
-      - "8000:8000"
-    command: >
-      sh -c "python manage.py makemigrations && 
-        python manage.py migrate && 
-        python manage.py runserver 0.0.0.0:8000"
+      - "7983:7983"
+    command: sh -c "/drf_pytest_swagger/entrypoint.sh"
     depends_on:
       - db
 
-
-
+  db:
+    image: postgres:latest
+    container_name: psql_db
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    environment:
+      - "POSTGRES_DB=${DB_NAME}"
+      - "POSTGRES_USER=${DB_USER}"
+      - "POSTGRES_PASSWORD=${DB_PASSWORD}"
