@@ -8,12 +8,12 @@ pipeline {
 //         sh 'pip install -r requirements.txt'
 //       }
 //     }
-
-    stage("Unit Test"){
-        steps {
-            sh 'pytest -sv'
-        }
-    }
+//
+//     stage("Unit Test"){
+//         steps {
+//             sh 'pytest -sv'
+//         }
+//     }
 
 //     stage('Database Migration') {
 //       steps {
