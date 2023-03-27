@@ -16,7 +16,7 @@ services:
     command: sh -c "/drf_pytest_swagger/entrypoint.sh"
     depends_on:
       db:
-        condition: service_completed_successfully
+        condition: service_started
 
   db:
     image: postgres:latest
