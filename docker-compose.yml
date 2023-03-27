@@ -15,7 +15,8 @@ services:
       - "7983:7983"
     command: sh -c "/drf_pytest_swagger/entrypoint.sh"
     depends_on:
-      - db
+      db:
+        condition: service_healthy
 
   db:
     image: postgres:latest
@@ -28,3 +29,8 @@ services:
       - "POSTGRES_DB=${DB_NAME}"
       - "POSTGRES_USER=${DB_USER}"
       - "POSTGRES_PASSWORD=${DB_PASSWORD}"
+    healthcheck:
+      test: ['CMD-SHELL', 'pg-ready -U ${DB_USER}']
+      interval: 10s
+      timeout: 5s
+      retries: 5
